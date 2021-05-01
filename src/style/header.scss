@@ -1,0 +1,69 @@
+.header__container {
+  width: 85%;
+  margin: auto;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.content {
+  max-width: 320px;
+  background-color: rgba(51, 51, 51, 0.5);
+  box-sizing: border-box;
+  padding: 15px;
+}
+.my__header {
+  background-position: center;
+  background-size: cover;
+  height: 550px;
+  position: relative;
+}
+.style__title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin: 0;
+  margin-bottom: 6px;
+  color: white;
+}
+@media (max-width: 450px) {
+  .style__title {
+    font-size: 2rem;
+  }
+}
+.style__description {
+  line-height: 1.3;
+  font-size: 0.8rem;
+  color: white;
+  margin-top: 7px;
+}
+.style__button {
+  cursor: pointer;
+  outline: none;
+  border: none;
+  font-weight: 700;
+  border-radius: 0.2vw;
+  padding: 0.5rem 2rem;
+  margin-right: 5px;
+  text-transform: capitalize;
+  color: #000;
+  background-color: $my__white;
+  margin-bottom: 5px;
+}
+.style__button:hover {
+  background-color: #111;
+  color: $my__white;
+  transition: all 0.2s;
+  outline: 1px solid $my__white;
+}
+.fadder {
+  height: 7.3rem;
+  background-image: linear-gradient(
+    180deg,
+    transparent,
+    rgba(37, 37, 37, 0.61),
+    #111
+  );
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+}

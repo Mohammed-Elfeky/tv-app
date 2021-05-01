@@ -1,0 +1,41 @@
+.genres {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 40px 0;
+}
+.genre__item {
+  padding: 5px;
+  box-sizing: border-box;
+  flex-basis: 25%;
+}
+.genre__item {
+  img {
+    width: 100%;
+  }
+}
+@media (max-width: 500px) {
+  .genre__item {
+    flex-basis: 100%;
+  }
+}
+@media (min-width: 500px) and (max-width: 700px) {
+  .genre__item {
+    flex-basis: 50%;
+  }
+}
+@media (min-width: 700px) and (max-width: 900px) {
+  .genre__item {
+    flex-basis: 33.33%;
+  }
+}
+
+.pages__container {
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+}
+.page_selected {
+  background-color: $my__black;
+  color: $my__white;
+  outline: 1px solid $my__white;
+}

@@ -1,0 +1,30 @@
+@import "colors.scss";
+@import "row.scss";
+@import "header.scss";
+@import 'trailer.scss';
+@import 'moviePage.scss';
+@import 'genres.scss';
+@import 'nav.scss';
+body {
+  background-color: $my__black;
+}
+a {
+  text-decoration: none;
+}
+.container {
+  width: 85%;
+  margin: auto;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(54, 56, 58);
+  border-radius: 10px;
+}

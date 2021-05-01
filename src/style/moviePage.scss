@@ -1,0 +1,49 @@
+.header__container__movie {
+  width: 85%;
+  margin: auto;
+  display: flex;
+}
+.left__part {
+  flex-basis: 40%;
+  box-sizing: border-box;
+  padding-right: 20px;
+}
+.left__part {
+  img {
+    width: 100%;
+  }
+}
+.right__part {
+  flex-basis: 60%;
+}
+.movie__name {
+  color: $my__white;
+  margin: 0;
+  font-size: 40px;
+}
+@media (max-width: 500px) {
+  .header__container__movie {
+    flex-wrap: wrap;
+  }
+  .left__part {
+    flex-basis: 100%;
+    margin-bottom: 10px;
+    padding: 0;
+  }
+  .right__part {
+    flex-basis: 100%;
+  }
+}
+.movie__page {
+  margin-top: 30px;
+}
+.movie__overview {
+  color: $my__white;
+  line-height: 30px;
+  max-width: 350px;
+}
+.movie__genere {
+  margin-top: 22px;
+  display: flex;
+  flex-wrap: wrap;
+}

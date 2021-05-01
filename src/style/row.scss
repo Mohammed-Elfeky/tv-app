@@ -1,0 +1,25 @@
+.poster__style {
+  transition: transform 0.2s;
+}
+.poster__style:hover {
+  transform: scale(1.08);
+}
+
+.actor__name__container {
+  padding: 5px;
+  box-sizing: border-box;
+  text-align: center;
+  font-size: small;
+}
+.original__name {
+  margin: 0;
+  font-weight: 400;
+  color: $my__white;
+  word-wrap: break-word;
+}
+.character__name {
+  margin: 0;
+  font-weight: 100;
+  color: $my__gray;
+  word-wrap: break-word;
+}
