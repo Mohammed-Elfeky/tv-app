@@ -3,7 +3,7 @@ import {useEffect,useState} from 'react'
 import { FiPlayCircle } from 'react-icons/fi';
 import axios from 'axios'
 import ReactPlayer from 'react-player/lazy'
-import {images_base_link,trailerFetch,fetchUrl_poster} from './requests'
+import {images_base_link,trailerFetch,fetchUrl_poster} from '../helpers/requests'
 function Trailer({id}) {
 
     const [play,setPlay]=useState(false)

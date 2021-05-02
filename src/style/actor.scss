@@ -1,0 +1,42 @@
+.actor {
+  display: flex;
+  padding: 30px 0;
+}
+.actor_img {
+  flex-basis: 40%;
+  padding-right: 20px;
+  box-sizing: border-box;
+}
+.actor_img {
+  img {
+    width: 100%;
+  }
+}
+.actor_info {
+  flex-basis: 60%;
+}
+.actor_info {
+  h1 {
+    color: $my__white;
+    margin: 0;
+    font-size: 40px;
+  }
+  p {
+    color: $my__white;
+    line-height: 30px;
+    max-width: 350px;
+  }
+}
+@media (max-width: 500px) {
+  .actor {
+    flex-wrap: wrap;
+  }
+  .actor_img {
+    flex-basis: 100%;
+    margin-bottom: 10px;
+    padding: 0;
+  }
+  .actor_info {
+    flex-basis: 100%;
+  }
+}

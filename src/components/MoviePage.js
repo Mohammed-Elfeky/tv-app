@@ -1,15 +1,15 @@
 import Row from './row'
 import axios from 'axios'
 import {useEffect,useState} from 'react'
-import {images_base_link} from './requests'
+import {images_base_link} from '../helpers/requests'
 import Trailer from './trailer'
-import truncate from './truncate'
+import truncate from '../helpers/truncate'
 import {Link} from 'react-router-dom'
 import {fetchUrl_poster,
         fetchUrl_similar,
         fetchUrl_recommendations,
         fetchUrl_cast
-       } from './requests'
+       } from '../helpers/requests'
 function MoviePage({match}) {
 
     const id=match.params.movieId;
@@ -23,7 +23,7 @@ function MoviePage({match}) {
             let movie=await axios.get(fetchUrl_poster(id))
             console.log(movie)
             setPosterState(`${images_base_link}${movie.data.poster_path}`)
-            setName(movie.data.name)
+            setName(movie.data.original_title)
             setMovieOverview(movie.data.overview)
             setMovieGeneres(movie.data.genres)
         }
@@ -51,7 +51,7 @@ function MoviePage({match}) {
                         <div className="movie__genere">
                             {
                                 movieGeneres.map(movieGenere=>(
-                                    <Link to={`/genre/${JSON.parse(movieGenere.id)}`}>
+                                    <Link to={`/genre/${movieGenere.id}`}>
                                       <button className="style__button">{movieGenere.name}</button>
                                     </Link>
                                 ))

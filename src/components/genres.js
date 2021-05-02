@@ -1,8 +1,8 @@
-import {images_base_link} from './requests'
+import {images_base_link} from '../helpers/requests'
 import axios from 'axios'
 import { useState,useEffect } from 'react'
 import {Link} from 'react-router-dom'
-import {fetch__genres} from './requests'
+import {fetch__genres} from '../helpers/requests'
 function Genres({match}) {
     const id=match.params.genreId
     const [genresPhotos,setGenresPhotos]=useState([])
@@ -24,7 +24,7 @@ function Genres({match}) {
                           <div className="genre__item">
                               <Link to={`/moviePage/${genresPhoto.id}`}>
                                  <img src={`${images_base_link}${genresPhoto.poster_path}`} alt=""/>
-                               </Link>
+                              </Link>
                           </div>
                         
                       ))

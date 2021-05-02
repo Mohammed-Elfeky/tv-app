@@ -1,7 +1,7 @@
 import {useEffect,useState} from 'react'
 import axios from 'axios'
-import {images_base_link} from './requests';
-import truncate from './truncate'
+import {images_base_link} from '../helpers/requests';
+import truncate from '../helpers/truncate'
 
 function Header({fetchUrl}) {
     
@@ -22,13 +22,14 @@ function Header({fetchUrl}) {
         <div className="my__header" style={{backgroundImage:`url(${images_base_link}${movie.backdrop_path})`}}>
            <div className="header__container">
                <div className="content">
-                   <h1 className="style__title">{movie.original_name}</h1>
+                   <h1 className="style__title">{movie.original_title}</h1>
                    <button className="style__button">play</button>
                    <button className="style__button">my list</button>
                    <p className="style__description">{truncate(movieOverview,100)}</p>  
                </div>
            </div>
-           <div className="fadder"></div>
+           <div className="bottom__fadder"></div>
+           {/* <div className="top__fadder"></div> */}
         </div>
     )
 }

@@ -3,10 +3,9 @@ import axios from 'axios'
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
-import {images_base_link} from './requests'
+import {images_base_link} from '../helpers/requests'
 import {Link} from 'react-router-dom'
-import sliderSettings from './sliderSettings'
-
+import sliderSettings from '../helpers/sliderSettings'
 //conditional style for poster padding based on isnetflex prop
 const poster_padding_style={ 
   netflex:{padding:'10px',boxSizing:'border-box'},
@@ -16,17 +15,24 @@ const poster_padding_style={
 export default function Row({title,fetchUrl,isnetflex,cast}) {
     
     const [movies,setMovies]=useState([]); //state to hold the movies 
-    const [showCast,setShowCast]=useState(true)
+    const [show,setShow]=useState(true)
+
     useEffect(()=>{
         const getData=async ()=>{
             let data=await axios.get(fetchUrl)
             if(cast){
-              setMovies(data.data.cast)
-              if(data.data.cast.length === 0){
-                setShowCast(false)
+              
+              if(data.data.cast.length < 4){
+                setShow(false)
+              }else{
+                setMovies(data.data.cast)
               }
             }else{
-              setMovies(data.data.results)
+              if(data.data.results.length < 4){
+                setShow(false)
+              }else{
+                setMovies(data.data.results)
+              }
             }
             
         }
@@ -37,17 +43,22 @@ export default function Row({title,fetchUrl,isnetflex,cast}) {
 
     return (
         <div className="row" style={{padding:'10px',boxSizing:"border-box"}} >
-           <div className="container">
-              {showCast && <h2 style={{color:"white"}}>{title}</h2>}
+          {
+            show && (
+              <div className="container">
+              <h2 style={{color:"white"}}>{title}</h2>
               {
                 cast ?  (
                   
                     <Slider {...sliderSettings(movies.length)} >
+                    
                     {
                         movies.map(movie=>(
                             <div key={movie.id}>
                               <div style={isnetflex ? poster_padding_style.netflex : poster_padding_style.normal}>
-                                  <img className="poster__style" style={{width:'100%'}} src={`${images_base_link}${movie.profile_path}`} alt=""/>
+                                  <Link to={`/actor/${movie.id}`}>
+                                    <img className="poster__style" style={{width:'100%'}} src={`${images_base_link}${movie.profile_path}`} alt=""/>
+                                  </Link>
                                   <div className="actor__name__container">
                                     <p className="original__name">{movie.original_name}</p>
                                     <p className="character__name">{movie.character}</p>
@@ -79,5 +90,7 @@ export default function Row({title,fetchUrl,isnetflex,cast}) {
                 
                 
            </div>
+            )
+          }
         </div>
     )}

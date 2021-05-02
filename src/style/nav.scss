@@ -5,6 +5,7 @@
 .my__nav {
   padding: 10px 0;
   box-sizing: border-box;
+  box-shadow: 0px 0px 35px 11px rgba(0,0,0,0.75);
 }
 .my__input {
   outline: none;
@@ -52,7 +53,7 @@
 }
 .result__item:hover {
   background-color: $my__white;
-  color: #111;
+  color: $my__black;
 }
 .result_img {
   flex-basis: 25%;

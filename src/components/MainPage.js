@@ -1,5 +1,5 @@
 import Row from './row'
-import {requests} from './requests';
+import {requests} from '../helpers/requests';
 import Header from './Header';
 function MainPage() {
     return (

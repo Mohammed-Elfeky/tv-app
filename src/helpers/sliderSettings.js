@@ -1,12 +1,16 @@
+ import SampleNextArrow from '../components/SampleNextArrow';
+ import SamplePrevArrow from '../components/SamplePrevArrow';
  const sliderSettings=(slidesNumLargeScreen)=>{
     return { //settings for slider
-        
-        arrows:false,
+      
+        easing:'ease-in-out',
         inite: false,
-        speed: 200,
-        slidesToShow: slidesNumLargeScreen <= 7 ? slidesNumLargeScreen:7,
-        slidesToScroll: 4,
+        speed: 2000,
+        slidesToShow: slidesNumLargeScreen < 5 ? slidesNumLargeScreen:5,
+        slidesToScroll: 3,
         initialSlide: 0,
+        nextArrow: <SampleNextArrow />,
+        prevArrow: <SamplePrevArrow />,
         responsive: [
           {
             breakpoint: 1024,

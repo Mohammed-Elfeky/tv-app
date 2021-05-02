@@ -15,7 +15,7 @@
 .my__header {
   background-position: center;
   background-size: cover;
-  height: 550px;
+  height: 600px;
   position: relative;
 }
 .style__title {
@@ -55,7 +55,7 @@
   transition: all 0.2s;
   outline: 1px solid $my__white;
 }
-.fadder {
+.bottom__fadder {
   height: 7.3rem;
   background-image: linear-gradient(
     180deg,
@@ -66,4 +66,16 @@
   position: absolute;
   bottom: 0px;
   width: 100%;
+}
+.top__fadder{
+  height: 60px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  background-image: linear-gradient(
+    180deg,
+    #111,
+    rgba(37, 37, 37, 0.61),
+    transparent
+  );
 }

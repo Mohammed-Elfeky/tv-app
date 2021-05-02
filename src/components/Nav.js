@@ -1,8 +1,8 @@
 import React from 'react'
 import {useState} from 'react'
 import axios from 'axios'
-import {fetchUrl_search} from './requests'
-import {images_base_link} from './requests'
+import {fetchUrl_search} from '../helpers/requests'
+import {images_base_link} from '../helpers/requests'
 import {Link} from 'react-router-dom'
 function Nav() {
     const [inputHolder,setIputHolder]=useState('')
@@ -46,7 +46,7 @@ function Nav() {
                                             <img src={`${images_base_link}${serchItem.poster_path}`} alt="" />
                                         </div>
                                         <div className="result_name">
-                                            {serchItem.name}
+                                            {serchItem.original_title}
                                         </div>
                                     </div>
                                 </Link>
