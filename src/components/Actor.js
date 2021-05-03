@@ -52,7 +52,7 @@ function Actor({match}) {
                             {
                                 actorMovies.map(actorMovie=>(
                                     <div>
-                                        <div style={{padding:"7px",boxSizing:"border-box"}}>
+                                        <div className="actor_known_for_slider_item" >
                                             <Link to={`/moviePage/${actorMovie.id}`}>
                                               <img style={{width:"100%"}} src={`${images_base_link}${actorMovie.poster_path}`} alt=""/>
                                             </Link>

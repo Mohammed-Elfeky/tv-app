@@ -29,7 +29,6 @@ function Header({fetchUrl}) {
                </div>
            </div>
            <div className="bottom__fadder"></div>
-           {/* <div className="top__fadder"></div> */}
         </div>
     )
 }

@@ -10,6 +10,7 @@ import {fetchUrl_poster,
         fetchUrl_recommendations,
         fetchUrl_cast
        } from '../helpers/requests'
+import spinner from '../images/spinner.gif'
 function MoviePage({match}) {
 
     const id=match.params.movieId;
@@ -19,6 +20,8 @@ function MoviePage({match}) {
     const [movieGeneres,setMovieGeneres]=useState([])
 
     useEffect(()=>{
+        window.scrollTo(0, 0)
+        setPosterState(spinner)   //show the loading gif for movie poster
         const getPoster=async()=>{
             let movie=await axios.get(fetchUrl_poster(id))
             console.log(movie)

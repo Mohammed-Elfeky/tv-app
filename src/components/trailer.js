@@ -4,18 +4,22 @@ import { FiPlayCircle } from 'react-icons/fi';
 import axios from 'axios'
 import ReactPlayer from 'react-player/lazy'
 import {images_base_link,trailerFetch,fetchUrl_poster} from '../helpers/requests'
+import spinner from '../images/spinner.gif'
 function Trailer({id}) {
 
     const [play,setPlay]=useState(false)
     const [videoKey,setVideoKey]=useState([])
     const [videoImage,setVideoImage]=useState([])
     const [showTrailerContainer,setShowTrailerContainer]=useState(true)
+
     useEffect(()=>{
+        setVideoImage(spinner)
+
         const getTrailer=async()=>{
             let theTrailer=await axios.get(trailerFetch(id))
             let theTrailerImage=await axios.get(fetchUrl_poster(id))
             if(theTrailer.data.results.length === 0){
-                setShowTrailerContainer(false)
+              setShowTrailerContainer(false)
             }else{
               setVideoImage(`${images_base_link}${theTrailerImage.data.backdrop_path}`)
               setVideoKey(theTrailer.data.results[0].key)
@@ -24,6 +28,7 @@ function Trailer({id}) {
             
         }
         getTrailer();
+
     },[id])
 
     return (

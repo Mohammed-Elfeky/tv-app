@@ -2,7 +2,7 @@
  import SamplePrevArrow from '../components/SamplePrevArrow';
  const sliderSettings=(slidesNumLargeScreen)=>{
     return { //settings for slider
-      
+        lazyLoad: true,
         easing:'ease-in-out',
         inite: false,
         speed: 2000,

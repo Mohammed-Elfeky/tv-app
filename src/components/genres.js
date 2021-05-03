@@ -3,16 +3,43 @@ import axios from 'axios'
 import { useState,useEffect } from 'react'
 import {Link} from 'react-router-dom'
 import {fetch__genres} from '../helpers/requests'
+import spinner from '../images/spinner.gif'
 function Genres({match}) {
+
     const id=match.params.genreId
     const [genresPhotos,setGenresPhotos]=useState([])
     const [pageId,setPageId]=useState([])
+
     useEffect(()=>{
+
+        //scroll to top
+        window.scrollTo(0, 0)
+        
+        // making an array of loading gifs and setting it to the state before fetching the data
+        
+            let arr=[];
+            for(let i=1;i<=20;i++){
+                arr.push({id:1,src:spinner})
+            }
+            setGenresPhotos(arr);
+       
+
+        // fetching the data and setting to state 
         const getGenres=async()=>{
             let genres=await axios.get(fetch__genres(id,pageId))
-            setGenresPhotos(genres.data.results)
+            let imagesArray=genres.data.results
+            imagesArray=imagesArray.map(ele=>{
+                return{
+                    id:ele.id,
+                    src:`${images_base_link}${ele.poster_path}`
+                }
+            })
+
+            setGenresPhotos(imagesArray)
         }
         getGenres()
+
+
     },[id,pageId])
     return (
         <div>
@@ -23,7 +50,8 @@ function Genres({match}) {
                         
                           <div className="genre__item">
                               <Link to={`/moviePage/${genresPhoto.id}`}>
-                                 <img src={`${images_base_link}${genresPhoto.poster_path}`} alt=""/>
+                                 {/* <img src={`${images_base_link}${genresPhoto.poster_path}`} alt=""/> */}
+                                     <img src={genresPhoto.src} alt=""/>
                               </Link>
                           </div>
                         

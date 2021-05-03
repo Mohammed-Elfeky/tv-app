@@ -4,7 +4,7 @@ export const images_base_link='https://image.tmdb.org/t/p/original'
 export const requests={
     trending:`${base}/trending/movie/day?api_key=${Api_Key}`,
     topRated:`${base}/movie/top_rated?api_key=${Api_Key}&language=en-US&page=1`,
-    netflix:`${base}/discover/movie?api_key=${Api_Key}&with_networks=213`,
+    netflix:`${base}/discover/movie?api_key=${Api_Key}&with_networks`,
     action:`${base}/discover/movie?api_key=${Api_Key}&with_genres=28`,
     comedy:`${base}/discover/movie?api_key=${Api_Key}&with_genres=35`,
     horror:`${base}/discover/movie?api_key=${Api_Key}&with_genres=27`,

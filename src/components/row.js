@@ -55,7 +55,7 @@ export default function Row({title,fetchUrl,isnetflex,cast}) {
                     {
                         movies.map(movie=>(
                             <div key={movie.id}>
-                              <div style={isnetflex ? poster_padding_style.netflex : poster_padding_style.normal}>
+                              <div style={{padding:'7px',boxSizing:'border-box',overflow:"hidden"}}>
                                   <Link to={`/actor/${movie.id}`}>
                                     <img className="poster__style" style={{width:'100%'}} src={`${images_base_link}${movie.profile_path}`} alt=""/>
                                   </Link>

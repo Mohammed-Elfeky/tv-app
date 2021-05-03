@@ -40,3 +40,11 @@
     flex-basis: 100%;
   }
 }
+.actor_known_for_slider_item{
+  padding: 7px;
+  box-sizing: border-box;
+  transition: all .2s;
+}
+.actor_known_for_slider_item:hover{
+  transform: scale(.8);
+}
