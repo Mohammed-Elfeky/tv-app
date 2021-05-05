@@ -7,8 +7,12 @@
   padding: 5px;
   box-sizing: border-box;
   flex-basis: 25%;
+  transition: transform 0.2s;
 }
 .genre__item {
+  &:hover{
+    transform: scale(.8);
+  };
   img {
     width: 100%;
   }

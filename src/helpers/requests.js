@@ -1,15 +1,14 @@
 export const Api_Key='3d345e53405a96f0c4488cd3dd27dea3'
 export const base='https://api.themoviedb.org/3'
-export const images_base_link='https://image.tmdb.org/t/p/original'
+export const images_base_link_trailerAndHeader='https://image.tmdb.org/t/p/original'
+export const images_base_link='https://image.tmdb.org/t/p/w500'
+export const images_base_link_search_result='https://image.tmdb.org/t/p/w200'
 export const requests={
     trending:`${base}/trending/movie/day?api_key=${Api_Key}`,
-    topRated:`${base}/movie/top_rated?api_key=${Api_Key}&language=en-US&page=1`,
-    netflix:`${base}/discover/movie?api_key=${Api_Key}&with_networks`,
     action:`${base}/discover/movie?api_key=${Api_Key}&with_genres=28`,
     comedy:`${base}/discover/movie?api_key=${Api_Key}&with_genres=35`,
     horror:`${base}/discover/movie?api_key=${Api_Key}&with_genres=27`,
-    romance:`${base}/discover/movie?api_key=${Api_Key}&with_genres=10749`,
-    documentary:`${base}/discover/movie?api_key=${Api_Key}&with_genres=99`,
+    ScienceFiction:`${base}/discover/movie?api_key=${Api_Key}&with_genres=878`
 }
 export const fetch__genres=(id,pageId)=>{
     return `https://api.themoviedb.org/3/discover/movie?api_key=${Api_Key}&with_genres=${id}&page=${pageId}`

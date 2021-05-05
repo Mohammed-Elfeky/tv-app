@@ -3,7 +3,7 @@ import {useEffect,useState} from 'react'
 import { FiPlayCircle } from 'react-icons/fi';
 import axios from 'axios'
 import ReactPlayer from 'react-player/lazy'
-import {images_base_link,trailerFetch,fetchUrl_poster} from '../helpers/requests'
+import {images_base_link_trailerAndHeader,trailerFetch,fetchUrl_poster} from '../helpers/requests'
 import spinner from '../images/spinner.gif'
 function Trailer({id}) {
 
@@ -21,7 +21,7 @@ function Trailer({id}) {
             if(theTrailer.data.results.length === 0){
               setShowTrailerContainer(false)
             }else{
-              setVideoImage(`${images_base_link}${theTrailerImage.data.backdrop_path}`)
+              setVideoImage(`${images_base_link_trailerAndHeader}${theTrailerImage.data.backdrop_path}`)
               setVideoKey(theTrailer.data.results[0].key)
               setPlay(false);
             }

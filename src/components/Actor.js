@@ -8,6 +8,7 @@ import truncate from '../helpers/truncate'
 import Slider from "react-slick";
 import sliderSettings from '../helpers/sliderSettings'
 import {Link} from 'react-router-dom'
+import LazyLoad from 'react-lazyload';
 function Actor({match}) {
 
     const id=match.params.actorId
@@ -54,7 +55,9 @@ function Actor({match}) {
                                     <div>
                                         <div className="actor_known_for_slider_item" >
                                             <Link to={`/moviePage/${actorMovie.id}`}>
-                                              <img style={{width:"100%"}} src={`${images_base_link}${actorMovie.poster_path}`} alt=""/>
+                                              <LazyLoad>
+                                                <img style={{width:"100%"}} src={`${images_base_link}${actorMovie.poster_path}`} alt=""/>
+                                              </LazyLoad>
                                             </Link>
                                         </div>
                                     </div>

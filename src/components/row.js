@@ -6,6 +6,8 @@ import "slick-carousel/slick/slick-theme.css";
 import {images_base_link} from '../helpers/requests'
 import {Link} from 'react-router-dom'
 import sliderSettings from '../helpers/sliderSettings'
+import LazyLoad from 'react-lazyload';
+import placeholder from '../images/placeholder.png'
 //conditional style for poster padding based on isnetflex prop
 const poster_padding_style={ 
   netflex:{padding:'10px',boxSizing:'border-box'},
@@ -47,6 +49,7 @@ export default function Row({title,fetchUrl,isnetflex,cast}) {
             show && (
               <div className="container">
               <h2 style={{color:"white"}}>{title}</h2>
+              <LazyLoad>
               {
                 cast ?  (
                   
@@ -57,7 +60,11 @@ export default function Row({title,fetchUrl,isnetflex,cast}) {
                             <div key={movie.id}>
                               <div style={{padding:'7px',boxSizing:'border-box',overflow:"hidden"}}>
                                   <Link to={`/actor/${movie.id}`}>
-                                    <img className="poster__style" style={{width:'100%'}} src={`${images_base_link}${movie.profile_path}`} alt=""/>
+                                    
+                                      <img className="poster__style" style={{width:'100%'}} src={`${images_base_link}${movie.profile_path}`} alt=""
+                                           onError={(e)=>{e.target.onerror = null; e.target.src=placeholder}}
+                                      />
+                                    
                                   </Link>
                                   <div className="actor__name__container">
                                     <p className="original__name">{movie.original_name}</p>
@@ -78,7 +85,9 @@ export default function Row({title,fetchUrl,isnetflex,cast}) {
                             <div key={movie.id}>
                               <div style={isnetflex ? poster_padding_style.netflex : poster_padding_style.normal}>
                                     <Link to={`/MoviePage/${movie.id}`}>
-                                      <img className="poster__style" style={{width:'100%'}} src={`${images_base_link}${movie.poster_path}`} alt=""/>
+                                      <img className="poster__style" style={{width:'100%'}} src={`${images_base_link}${movie.poster_path}`} alt=""
+                                           src={`${images_base_link}${movie.poster_path}`}
+                                      />
                                     </Link>
                               </div>
                             </div>
@@ -87,6 +96,7 @@ export default function Row({title,fetchUrl,isnetflex,cast}) {
                   </Slider>
                 )
               }
+              </LazyLoad>
                 
                 
            </div>

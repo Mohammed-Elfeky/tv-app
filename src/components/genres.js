@@ -4,8 +4,9 @@ import { useState,useEffect } from 'react'
 import {Link} from 'react-router-dom'
 import {fetch__genres} from '../helpers/requests'
 import spinner from '../images/spinner.gif'
+import LazyLoad from 'react-lazyload';
 function Genres({match}) {
-
+    
     const id=match.params.genreId
     const [genresPhotos,setGenresPhotos]=useState([])
     const [pageId,setPageId]=useState([])
@@ -50,8 +51,12 @@ function Genres({match}) {
                         
                           <div className="genre__item">
                               <Link to={`/moviePage/${genresPhoto.id}`}>
-                                 {/* <img src={`${images_base_link}${genresPhoto.poster_path}`} alt=""/> */}
-                                     <img src={genresPhoto.src} alt=""/>
+                                
+                                    
+                                    <LazyLoad>
+                                      <img src={genresPhoto.src} alt=""/>
+                                    </LazyLoad>
+                                
                               </Link>
                           </div>
                         
