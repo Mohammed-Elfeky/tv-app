@@ -1,11 +1,11 @@
 @import "colors.scss";
-@import "row.scss";
-@import "header.scss";
-@import 'trailer.scss';
-@import 'moviePage.scss';
-@import 'genres.scss';
-@import 'nav.scss';
-@import 'actor.scss';
+@import "../row/row.scss";
+@import "../Header/header.scss";
+@import '../trailer/trailer.scss';
+@import '../MoviePage/moviePage.scss';
+@import '../genres/genres.scss';
+@import '../Nav/nav.scss';
+@import '../Actor/actor.scss';
 body {
   background-color: $my__black;
 }

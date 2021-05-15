@@ -1,16 +1,16 @@
-import Row from './row'
+import Row from '../row'
 import axios from 'axios'
 import {useEffect,useState} from 'react'
-import {images_base_link} from '../helpers/requests'
-import Trailer from './trailer'
-import truncate from '../helpers/truncate'
+import {images_base_link} from '../../helpers/requests'
+import Trailer from '../trailer'
+import truncate from '../../helpers/truncate'
 import {Link} from 'react-router-dom'
 import {fetchUrl_poster,
         fetchUrl_similar,
         fetchUrl_recommendations,
         fetchUrl_cast
-       } from '../helpers/requests'
-import spinner from '../images/spinner.gif'
+       } from '../../helpers/requests'
+import spinner from '../../images/spinner.gif'
 function MoviePage({match}) {
 
     const id=match.params.movieId;

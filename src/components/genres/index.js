@@ -1,9 +1,9 @@
-import {images_base_link} from '../helpers/requests'
+import {images_base_link} from '../../helpers/requests'
 import axios from 'axios'
 import { useState,useEffect } from 'react'
 import {Link} from 'react-router-dom'
-import {fetch__genres} from '../helpers/requests'
-import spinner from '../images/spinner.gif'
+import {fetch__genres} from '../../helpers/requests'
+import spinner from '../../images/spinner.gif'
 import LazyLoad from 'react-lazyload';
 function Genres({match}) {
     

@@ -3,10 +3,10 @@ import axios from 'axios'
 import {fetchUrl_actor_movies,
         fetchUrl_actor_info,
         images_base_link
-       } from '../helpers/requests'
-import truncate from '../helpers/truncate'
+       } from '../../helpers/requests'
+import truncate from '../../helpers/truncate'
 import Slider from "react-slick";
-import sliderSettings from '../helpers/sliderSettings'
+import sliderSettings from '../../helpers/sliderSettings'
 import {Link} from 'react-router-dom'
 import LazyLoad from 'react-lazyload';
 function Actor({match}) {

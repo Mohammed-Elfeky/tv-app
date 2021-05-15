@@ -1,11 +1,11 @@
 import React from 'react'
 import {useState} from 'react'
 import axios from 'axios'
-import {fetchUrl_search} from '../helpers/requests'
-import {images_base_link_search_result} from '../helpers/requests'
+import {fetchUrl_search} from '../../helpers/requests'
+import {images_base_link_search_result} from '../../helpers/requests'
 import {Link} from 'react-router-dom'
 import LazyLoad from 'react-lazyload';
-import placeholder from '../images/placeholder.png'
+import placeholder from '../../images/placeholder.png'
 function Nav() {
 
     const [inputHolder,setIputHolder]=useState('')

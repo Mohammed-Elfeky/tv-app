@@ -1,10 +1,10 @@
-import MainPage from './MainPage'
-import MoviePage from './MoviePage'
-import Genres from './genres'
+import MainPage from '../MainPage'
+import MoviePage from '../MoviePage'
+import Genres from '../genres'
 import {Switch,Route} from 'react-router-dom'
-import Nav from './Nav'
-import '../style/App.scss'
-import Actor from './Actor'
+import Nav from '../Nav'
+import './App.scss'
+import Actor from '../Actor'
 function App() {
   return (
     <div className="App">

@@ -1,7 +1,7 @@
 import {useEffect,useState} from 'react'
 import axios from 'axios'
-import {images_base_link_trailerAndHeader} from '../helpers/requests';
-import truncate from '../helpers/truncate'
+import {images_base_link_trailerAndHeader} from '../../helpers/requests';
+import truncate from '../../helpers/truncate'
 import {Link} from 'react-router-dom'
 function Header({fetchUrl}) {
     

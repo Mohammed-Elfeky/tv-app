@@ -1,6 +1,6 @@
-import Row from './row'
-import {requests} from '../helpers/requests';
-import Header from './Header';
+import Row from '../row'
+import {requests} from '../../helpers/requests';
+import Header from '../Header';
 function MainPage() {
     return (
         <div>

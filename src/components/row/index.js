@@ -3,11 +3,11 @@ import axios from 'axios'
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
-import {images_base_link} from '../helpers/requests'
+import {images_base_link} from '../../helpers/requests'
 import {Link} from 'react-router-dom'
-import sliderSettings from '../helpers/sliderSettings'
+import sliderSettings from '../../helpers/sliderSettings'
 import LazyLoad from 'react-lazyload';
-import placeholder from '../images/placeholder.png'
+import placeholder from '../../images/placeholder.png'
 //conditional style for poster padding based on isnetflex prop
 const poster_padding_style={ 
   netflex:{padding:'10px',boxSizing:'border-box'},
